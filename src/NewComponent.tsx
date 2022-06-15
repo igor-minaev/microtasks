@@ -1,4 +1,15 @@
+export type StudentType = {
+    id: number
+    name: string
+    age: number
+}
 
-export const NewComponent=()=>{
-    return()
+type NewComponentType = {
+    students: Array<StudentType>
+}
+
+export const NewComponent = (props: NewComponentType) => {
+    return (
+        <div>New Component</div>
+    )
 }
