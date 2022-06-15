@@ -10,6 +10,15 @@ type NewComponentType = {
 
 export const NewComponent = (props: NewComponentType) => {
     return (
-        <div>New Component</div>
+        <ul>
+            {props.students.map((t) => {
+                return (
+                    <li key={t.id}>
+                        <span>{t.name}</span>
+                        <span> age: {t.age}</span>
+                    </li>
+                )
+            })}
+        </ul>
     )
 }
