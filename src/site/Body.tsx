@@ -1,5 +1,5 @@
-export const Body = ()=>{
-    return(
+export const Body = () => {
+    return (
         <div>Body</div>
     )
 }
