@@ -9,8 +9,13 @@ type NewComponentType = {
 }
 
 export const NewComponent = (props: NewComponentType) => {
+    const topCars = [
+        {manufacturer: 'BMW', model: 'n5cs'},
+        {manufacturer: 'Mercedes', model: 'e63s'},
+        {manufacturer: 'Audi', model: 'rs6'}
+    ]
     return (
-        <ul>
+        /*<ul>
             {props.students.map((t) => {
                 return (
                     <li key={t.id}>
@@ -19,6 +24,21 @@ export const NewComponent = (props: NewComponentType) => {
                     </li>
                 )
             })}
-        </ul>
+        </ul>*/
+        <table>
+            <tr>
+                <th>Manufacturer</th>
+                <th>Model</th>
+
+            </tr>
+            {topCars.map((t, index) => {
+                return (
+                    <tr key={++index}>
+                        <td>{t.manufacturer}</td>
+                        <td>{t.model}</td>
+                    </tr>
+                )
+            })}
+        </table>
     )
 }

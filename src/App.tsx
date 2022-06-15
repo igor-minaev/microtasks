@@ -9,7 +9,7 @@ function App() {
         {id: 3, name: 'David', age: 2},
         {id: 4, name: 'Sam', age: 12},
         {id: 5, name: 'Jim', age: 6},
-        {id: 6, name: 'Bob', age: 27},
+        {id: 6, name: 'Bob', age: 27}
     ]
     return (
         <NewComponent students={students}/>
