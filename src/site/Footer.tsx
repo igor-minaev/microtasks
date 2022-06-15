@@ -1,6 +1,10 @@
-export const Footer=()=>{
-    return(
-        <>Footer</>
+type FooterType = {
+    titleForFooter: string
+}
+
+export const Footer = (props: FooterType) => {
+    return (
+        <>{props.titleForFooter}</>
     )
 
 }
