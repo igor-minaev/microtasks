@@ -19,8 +19,9 @@ function App() {
                 return(
                     <li key={index}>
                         <span>{t.banknots}</span>
-                        <span>{t.number}</span>
-                        <span>{t.value}</span>
+                        <span> {t.value}</span>
+                        <span> {t.number}</span>
+
                     </li>
                 )
             })}
