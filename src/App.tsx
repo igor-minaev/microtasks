@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
+import {CurrentMoneyType, NewComponent} from "./NewComponent";
 
-type ButtonType= "All" | 'Dollars' | 'RUBLS'
+export type FilerType= "All" | 'Dollars' | 'RUBLS'
 
 function App() {
-    const [money, setMoney] = useState([
+    const [money, setMoney] = useState<Array<CurrentMoneyType>>([
         {banknots: 'Dollars', value: 100, number: ' a1234567890'},
         {banknots: 'Dollars', value: 50, number: ' z1234567890'},
         {banknots: 'RUBLS', value: 100, number: ' w1234567890'},
@@ -12,10 +13,10 @@ function App() {
         {banknots: 'Dollars', value: 50, number: ' c1234567890'},
         {banknots: 'RUBLS', value: 100, number: ' r1234567890'},
         {banknots: 'Dollars', value: 50, number: ' x1234567890'},
-        {banknots: 'RUBLS', value: 50, number: ' v1234567890'},
+        {banknots: 'RUBLS', value: 50, number: ' v1234567890'}
     ])
 
-    const [filter, setFilter] = useState('All')
+    const [filter, setFilter] = useState<FilerType>('All')
 
     let currentMoney = money
     if(filter==='RUBLS'){
@@ -26,33 +27,13 @@ function App() {
     }
 
 
-    const onClickFilterHandler=(nameButton:string)=>{
+    const onClickFilterHandler=(nameButton:FilerType)=>{
         setFilter(nameButton)
     }
 
 
     return (
-        <>
-            <ul>
-                {currentMoney.map((t, index) => {
-                    return (
-                        <li key={index}>
-                            <span>{t.banknots}</span>
-                            <span> {t.value}</span>
-                            <span> {t.number}</span>
-                        </li>
-
-                    )
-                })}
-            </ul>
-            <div style={{marginLeft: '35px'}}>
-                <button onClick={()=>onClickFilterHandler('All')}>All</button>
-                <button onClick={()=>onClickFilterHandler('Dollars')}>Dollars</button>
-                <button onClick={()=>onClickFilterHandler('RUBLS')}>RUBLS</button>
-            </div>
-        </>
-
-
+        <NewComponent onClickFilterHandler={onClickFilterHandler} currentMoney={currentMoney}/>
     );
 }
 
