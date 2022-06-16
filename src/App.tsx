@@ -1,28 +1,14 @@
 import React from 'react';
 import './App.css';
+import {Button} from "./components/Button";
 
 function App() {
-    // const myFirstSubscriber=(event: MouseEvent<HTMLButtonElement)=>{
-    //     console.log('Hello Im VASYA')
-    // }
-    // const mySecondSubscriber=()=>{
-    //     console.log('Hello Im Ivan')
-    // }
-
-    const onClickHandler=(name: string)=>{
-        console.log(name)
-    }
-
 
     return (
         <div className="App">
-            {/*<button onClick={(event)=>{console.log('Hello')}}>MyYoutube channel-1</button>*/}
-              <button onClick={()=>onClickHandler('VASYA')}>MyYoutube channel-1</button>
-              <button onClick={()=>onClickHandler('IVAN')}>MyYoutube channel-2</button>
-
-
+            <Button name={'YoutubeChannel-1'}/>
+            <Button name={'YoutubeChannel-12'}/>
         </div>
-
     );
 }
 
